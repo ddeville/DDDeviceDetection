@@ -2,7 +2,7 @@
 //  DDDeviceDetection.h
 //  Device Detection
 //
-//  Created by Damien DeVille on 7/21/10.
+//  Created by Damien DeVille on 8/17/10.
 //  Copyright 2010 Damien DeVille. All rights reserved.
 //
 
