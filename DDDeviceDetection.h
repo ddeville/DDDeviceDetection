@@ -30,14 +30,6 @@
 
 
 
-/*
-	NOTE: this is a compile time flag that you can use (at compile time!)
-	given that the following methods are for use at runtime
- */
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 40000
-#define RUNNING_IOS4_0_OR_GREATER
-#endif
-
 
 @interface DDDeviceDetection : NSObject
 
