@@ -427,7 +427,7 @@
 	{
 		// prior to iOS 4.0, headingAvailable is a property (deprecated in iOS 4.0)
 		id coreLocationManager = [[[NSClassFromString(@"CLLocationManager") alloc] init] autorelease] ;
-		if ([coreLocationManager headingAvailable])
+		if ([coreLocationManager respondsToSelector: @selector(headingAvailable)])
 			return YES ;
 	}
 	return NO ;
