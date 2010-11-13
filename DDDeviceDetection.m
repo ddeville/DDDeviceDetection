@@ -255,6 +255,18 @@
 
 
 
++ (BOOL)canSendSMS
+{
+	// defined in 4.0
+	if (![self isRunningiOS4])
+		return NO ;
+	if ([NSClassFromString(@"MFMessageComposeViewController") respondsToSelector: @selector(canSendText)])
+		if ([NSClassFromString(@"MFMessageComposeViewController") performSelector: @selector(canSendText)])
+			return YES ;
+	return NO ;
+}
+
+
 
 
 

@@ -48,6 +48,7 @@
 
 // software capabilities checking
 + (BOOL)isMultitaskingSupported ;
++ (BOOL)canSendSMS ;
 
 // audio capabilities checking
 + (BOOL)isInSilentMode ;
