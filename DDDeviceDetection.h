@@ -22,6 +22,14 @@
 
 /*
 	Feel free to comment the following import if you don't need to test
+	message capabilities and don't want to import the MessageUI framework
+ */
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 30000
+#import <MessageUI/MessageUI.h>
+#endif
+
+/*
+	Feel free to comment the following import if you don't need to test
 	gyroscope capabilities and don't want to import the CoreMotion framework
  */
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 40000
@@ -48,6 +56,9 @@
 
 // software capabilities checking
 + (BOOL)isMultitaskingSupported ;
+
+// message capabilities
++ (BOOL)canSendEmail ;
 + (BOOL)canSendSMS ;
 
 // audio capabilities checking

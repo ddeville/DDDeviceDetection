@@ -255,17 +255,33 @@
 
 
 
+
+
+
+
+
+
+
+#pragma mark -
+#pragma mark Message capabilities
+
++ (BOOL)canSendEmail
+{
+	if ([NSClassFromString(@"MFMailComposeViewController") respondsToSelector: @selector(canSendMail)])
+		if ([NSClassFromString(@"MFMailComposeViewController") performSelector: @selector(canSendMail)])
+			return YES ;
+	return NO ;
+}
+
+
+
 + (BOOL)canSendSMS
 {
-	// defined in 4.0
-	if (![self isRunningiOS4])
-		return NO ;
 	if ([NSClassFromString(@"MFMessageComposeViewController") respondsToSelector: @selector(canSendText)])
 		if ([NSClassFromString(@"MFMessageComposeViewController") performSelector: @selector(canSendText)])
 			return YES ;
 	return NO ;
 }
-
 
 
 
