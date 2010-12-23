@@ -41,8 +41,8 @@
 #define kCFCoreFoundationVersionNumber_iPhoneOS_3_2 478.61
 #endif
 
-#ifndef kCFCoreFoundationVersionNumber_iPhoneOS_4_0
-#define kCFCoreFoundationVersionNumber_iPhoneOS_4_0 550.32
+#ifndef kCFCoreFoundationVersionNumber_iOS_4_0
+#define kCFCoreFoundationVersionNumber_iOS_4_0 550.32
 #endif
 
 /*
@@ -142,6 +142,8 @@
 		return @"iPod Touch 2G" ;
 	if ([platform isEqualToString: @"iPod3,1"])
 		return @"iPod Touch 3G" ;
+	if ([platform isEqualToString: @"iPod4,1"])
+		return @"iPod Touch 4G" ;
 	if ([platform isEqualToString: @"iPad1,1"])
 		return @"iPad" ;
 	if ([platform isEqualToString: @"i386"])
@@ -218,7 +220,7 @@
 
 + (BOOL)isRunningiOS3
 {
-	if (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_iPhoneOS_3_0 && kCFCoreFoundationVersionNumber < kCFCoreFoundationVersionNumber_iPhoneOS_4_0)
+	if (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_iPhoneOS_3_0 && kCFCoreFoundationVersionNumber < kCFCoreFoundationVersionNumber_iOS_4_0)
 		return YES ;
 	return NO ;
 }
@@ -227,7 +229,7 @@
 
 + (BOOL)isRunningiOS4
 {
-	if (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_iPhoneOS_4_0)
+	if (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_iOS_4_0)
 		return YES ;
 	return NO ;
 }
