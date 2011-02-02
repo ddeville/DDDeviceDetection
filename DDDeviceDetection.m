@@ -45,6 +45,14 @@
 #define kCFCoreFoundationVersionNumber_iOS_4_0 550.32
 #endif
 
+#ifndef kCFCoreFoundationVersionNumber_iOS_4_1
+#define kCFCoreFoundationVersionNumber_iOS_4_1 550.38
+#endif
+
+#ifndef kCFCoreFoundationVersionNumber_iOS_4_2
+#define kCFCoreFoundationVersionNumber_iOS_4_2 550.52
+#endif
+
 /*
 	the following are only defined in iOS 4.0 so it is worth
 	defining them in case you do not compile with 4.0
