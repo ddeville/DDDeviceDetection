@@ -314,7 +314,7 @@
 	else
 	{
 		// we first check if the AudioToolbox has been correctly imported
-#ifdef kAudioSessionProperty_AudioRoute
+#ifdef __AudioServices_h__
 		CFStringRef state ;
 		UInt32 propertySize = sizeof(CFStringRef) ;
 		AudioSessionInitialize(NULL, NULL, NULL, NULL) ;
@@ -344,7 +344,7 @@
 	else
 	{
 		// we first check if the AudioToolbox has been correctly imported
-#ifdef kAudioSessionProperty_AudioRoute
+#ifdef __AudioServices_h__
 		CFStringRef state ;
 		UInt32 propertySize = sizeof(CFStringRef) ;
 		AudioSessionInitialize(NULL, NULL, NULL, NULL) ;
@@ -374,7 +374,7 @@
 	else
 	{
 		// we first check if the AudioToolbox has been correctly imported
-#ifdef kAudioSessionProperty_AudioRoute
+#ifdef __AudioServices_h__
 		CFStringRef state ;
 		UInt32 propertySize = sizeof(CFStringRef) ;
 		AudioSessionInitialize(NULL, NULL, NULL, NULL) ;
