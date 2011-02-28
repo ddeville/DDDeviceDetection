@@ -88,24 +88,11 @@
 #endif
 
 
-
 @interface DDDeviceDetection (Private)
 
 + (NSString *)detectPlatform ;
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @implementation DDDeviceDetection
@@ -123,10 +110,6 @@
 	free(machine) ;
 	return platform ;
 }
-
-
-
-
 
 
 
@@ -159,8 +142,10 @@
 	return platform ;
 }
 
-
-
++ (NSString *)returnOSVersion
+{
+	return [[UIDevice currentDevice] systemVersion] ;
+}
 
 
 
@@ -175,8 +160,6 @@
 	return NO ;
 }
 
-
-
 + (BOOL)isAniPhone
 {
 	NSRange textRange =[[self detectPlatform] rangeOfString: @"iPhone"] ;
@@ -184,8 +167,6 @@
 		return YES ;
 	return NO ;
 }
-
-
 
 + (BOOL)isAniPad
 {
@@ -195,8 +176,6 @@
 	return NO ;
 }
 
-
-
 + (BOOL)isSimulator
 {
 	NSRange textRange =[[self detectPlatform] rangeOfString: @"i386"] ;
@@ -204,13 +183,6 @@
 		return YES ;
 	return NO ;
 }
-
-
-
-
-
-
-
 
 
 
@@ -224,8 +196,6 @@
 	return NO ;
 }
 
-
-
 + (BOOL)isRunningiOS3
 {
 	if (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_iPhoneOS_3_0 && kCFCoreFoundationVersionNumber < kCFCoreFoundationVersionNumber_iOS_4_0)
@@ -233,22 +203,12 @@
 	return NO ;
 }
 
-
-
 + (BOOL)isRunningiOS4
 {
 	if (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_iOS_4_0)
 		return YES ;
 	return NO ;
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -265,13 +225,6 @@
 
 
 
-
-
-
-
-
-
-
 #pragma mark -
 #pragma mark Message capabilities
 
@@ -283,8 +236,6 @@
 	return NO ;
 }
 
-
-
 + (BOOL)canSendSMS
 {
 	if ([NSClassFromString(@"MFMessageComposeViewController") respondsToSelector: @selector(canSendText)])
@@ -292,11 +243,6 @@
 			return YES ;
 	return NO ;
 }
-
-
-
-
-
 
 
 
@@ -331,8 +277,6 @@
 	return NO ;
 }
 
-
-
 + (BOOL)hasSpeakersOn
 {
 	/*
@@ -360,8 +304,6 @@
 	}
 	return NO ;	
 }
-
-
 
 + (BOOL)hasHeadphonesPlugged
 {
@@ -393,12 +335,6 @@
 
 
 
-
-
-
-
-
-
 #pragma mark -
 #pragma mark Detect hardware capabilities
 
@@ -409,16 +345,12 @@
 	return NO ;
 }
 
-
-
 + (BOOL)hasCamera
 {
 	if ([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera])
 		return YES ;
 	return NO ;
 }
-
-
 
 + (BOOL)canRecordVideo
 {
@@ -431,8 +363,6 @@
 	return NO ;
 }
 
-
-
 + (BOOL)hasFrontFacingCamera
 {
 	if ([UIImagePickerController respondsToSelector: @selector(isCameraDeviceAvailable:)])
@@ -441,8 +371,6 @@
 	return NO ;
 }
 
-
-
 + (BOOL)hasRearFlashLight
 {
 	if ([UIImagePickerController respondsToSelector: @selector(isFlashAvailableForCameraDevice:)])
@@ -450,8 +378,6 @@
 			return YES ;
 	return NO ;
 }
-
-
 
 + (BOOL)hasCompass
 {
@@ -471,8 +397,6 @@
 	return NO ;
 }
 
-
-
 + (BOOL)hasGyroscope
 {
 	// we first check whether the CoreMotion manager class is defined
@@ -484,6 +408,5 @@
 		return YES ;
 	return NO ;
 }
-
 
 @end

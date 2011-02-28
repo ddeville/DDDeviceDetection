@@ -37,11 +37,10 @@
 #endif
 
 
-
-
 @interface DDDeviceDetection : NSObject
 
 + (NSString *)returnDeviceName ;
++ (NSString *)returnOSVersion ;
 
 // device checking
 + (BOOL)isAniPod ;
