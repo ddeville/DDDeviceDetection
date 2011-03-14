@@ -1,12 +1,27 @@
-build
-*xcodeproj/*mode*
-*xcodeproj/*pbxuser
-*xcodeproj/*per*
-*xcodeproj/project.xcworkspace
-*xcodeproj/xcuserdata
-*tmproj
-*.pbxuser
-profile
-*.mode1v3
+# OS X
 .DS_Store
+.DS_store
+profile
+
+# XCode and built products
+*xcodeproj/*pbxuser*
+*xcodeproj/*per*
+*xcodeproj/*mode*
+*tmproj
+External/GHUnit/*
+
+# for Xcode 4
+*xcodeproj/xcuserdata
+*xcodeproj/project.xcworkspace
+
+# built products
+build
+*.o
+
+# Other source repository archive directories
+.hg
 .svn
+CVS
+
+# Autosaved
+#~.nib/
