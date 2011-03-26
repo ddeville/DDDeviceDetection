@@ -137,6 +137,8 @@
 		return @"iPod Touch 4G" ;
 	if ([platform isEqualToString: @"iPad1,1"])
 		return @"iPad" ;
+	if ([platform isEqualToString: @"iPad2,1"])
+		return @"iPad 2" ;
 	if ([platform isEqualToString: @"i386"])
 		return @"Simulator" ;
 	return platform ;
